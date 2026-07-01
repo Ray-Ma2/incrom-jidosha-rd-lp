@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>自動車R&amp;D・DMS評価向け 被験者調達サービス｜インクロム</title>
+<meta name="description" content="Euro NCAP等のDMS（眠気・脇見検知）評価が強化される中、医師の確定診断に基づく"本物の被験者"を医療情報付きパネルから調達。初期費用0円・完全出来高制。治験CROのGCP管理で開発機密と来場率を両立。">
+<style>
+:root{
+  --navy:#0a2540; --navy2:#12345c; --ink:#1f2733; --muted:#5b6b7c;
+  --line:#e3e9f0; --bg:#ffffff; --soft:#f5f8fc; --soft2:#eef3f9;
+  --accent:#c8102e; --accent-soft:#fdecee;
+  --blue:#1763a6; --green:#0f7a52; --green-soft:#e8f5ee;
+  --gold:#8a6d00; --gold-soft:#fff7e0; --gold-line:#e9d39a;
+  --radius:14px; --shadow:0 6px 20px -8px rgba(10,37,64,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); background:var(--bg);
+  font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP',system-ui,-apple-system,'Segoe UI',Meiryo,sans-serif;
+  line-height:1.8; font-size:16px; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{max-width:1040px; margin:0 auto; padding:0 22px}
+section{padding:60px 0}
+h2.sec-title{font-size:clamp(22px,3.4vw,30px); color:var(--navy); font-weight:800; line-height:1.4; margin:0 0 8px}
+.sec-lead{color:var(--muted); font-size:15px; margin:0 0 28px}
+.eyebrow{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; letter-spacing:.04em; color:var(--blue);
+  background:var(--soft2); border:1px solid var(--line); padding:5px 12px; border-radius:999px}
+.icon{width:1em; height:1em; display:inline-block; vertical-align:-.12em; flex:none}
+svg{stroke-linecap:round; stroke-linejoin:round}
+
+/* ===== Header / nav ===== */
+.topbar{position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex; align-items:center; justify-content:space-between; height:58px; min-width:0; gap:10px}
+.brand{font-weight:800; color:var(--navy); font-size:17px; letter-spacing:.02em; min-width:0}
+.brand small{display:block; font-size:10px; font-weight:600; color:var(--muted); letter-spacing:.06em}
+.nav-cta{display:inline-flex; align-items:center; gap:7px; background:var(--accent); color:#fff; font-weight:700; font-size:14px;
+  text-decoration:none; padding:9px 16px; border-radius:999px; box-shadow:var(--shadow)}
+.nav-cta:hover{background:#a50d24}
+
+/* ===== Hero（画像埋込） ===== */
+.hero{padding:36px 0 28px; border-bottom:1px solid var(--line)}
+.hero-img{
+  display:block; width:100%; height:auto;
+  border-radius:14px;
+  box-shadow:0 10px 40px -12px rgba(10,37,64,.22);
+}
+.hero-cta-row{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:22px}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; text-decoration:none; font-weight:800; border-radius:999px; cursor:pointer; border:none; max-width:100%; overflow-wrap:anywhere; text-align:center}
+.btn-primary{background:var(--accent); color:#fff; padding:15px 26px; font-size:16px; box-shadow:0 10px 24px -8px rgba(200,16,46,.5)}
+.btn-primary:hover{background:#a50d24}
+.btn-ghost{background:#fff; color:var(--navy); border:1.5px solid var(--line); padding:14px 22px; font-size:15px}
+.btn-ghost:hover{border-color:var(--blue); color:var(--blue)}
+.hero-note{font-size:13px; color:var(--muted); margin:10px 0 0}
+
+/* ===== Tech band ===== */
+.tech-band{background:var(--soft2); border-bottom:1px solid var(--line)}
+.tech-band .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:9px 12px; padding:13px 22px; font-size:13px; color:#41505f; line-height:1.6}
+.tech-band .tb-label{flex:none; font-weight:800; color:var(--navy); background:#fff; border:1px solid var(--line); padding:4px 11px; border-radius:999px; font-size:12px}
+.tech-band .tb-text{flex:1; min-width:0; overflow-wrap:anywhere}
+
+/* ===== Trust stat bar ===== */
+.trustbar{background:var(--navy); color:#fff}
+.trustbar .wrap{display:grid; grid-template-columns:repeat(5,1fr); gap:4px; padding:22px 22px}
+.trustbar .t{ text-align:center; padding:6px 8px; border-right:1px solid rgba(255,255,255,.12)}
+.trustbar .t:last-child{border-right:none}
+.trustbar .n{font-size:clamp(18px,2.6vw,26px); font-weight:800; color:#fff; line-height:1.2}
+.trustbar .n span{font-size:12px; font-weight:600; color:#cfe0f1}
+.trustbar .l{font-size:11.5px; color:#bcd0e6; margin-top:3px; letter-spacing:.02em}
+
+/* ===== Cards / grid ===== */
+.grid{display:grid; gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+.card.soft{background:var(--soft); box-shadow:none}
+.card-ic{width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; margin-bottom:14px}
+.ic-red{background:var(--accent-soft); color:var(--accent)}
+.ic-navy{background:var(--soft2); color:var(--navy)}
+.ic-green{background:var(--green-soft); color:var(--green)}
+.card h3{margin:0 0 8px; font-size:18px; color:var(--navy); font-weight:800; line-height:1.45}
+.card p{margin:0; font-size:14.5px; color:#41505f}
+.summary-line{font-weight:800; color:var(--navy); background:var(--soft); border-left:4px solid var(--blue);
+  padding:12px 16px; border-radius:0 8px 8px 0; margin:0 0 20px; font-size:15.5px}
+
+/* risk reversal block */
+.reverse{background:linear-gradient(180deg,#fff,#f3f8f4); border:1.5px solid var(--green); border-radius:var(--radius);
+  padding:26px 28px; display:flex; gap:18px; align-items:flex-start}
+.reverse .ic{flex:none; width:46px; height:46px; border-radius:12px; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center}
+.reverse h3{margin:0 0 6px; color:var(--green); font-size:19px; font-weight:800}
+.reverse p{margin:0; color:#33414f; font-size:15px}
+
+/* ===== Table ===== */
+.table-scroll{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; min-width:640px; font-size:14px; background:#fff}
+th,td{text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); vertical-align:top}
+thead th{background:var(--navy); color:#fff; font-weight:700; font-size:13.5px; letter-spacing:.02em; border-bottom:none}
+tbody tr:nth-child(even){background:var(--soft)}
+td .uc{font-weight:800; color:var(--navy)}
+.spec-table th{width:30%; background:var(--soft2); color:var(--navy); border-bottom:1px solid #fff}
+.spec-table td{background:#fff}
+
+/* ===== Process ===== */
+.steps{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+.step{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 16px; position:relative; box-shadow:var(--shadow)}
+.step .no{width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.step h4{margin:0 0 5px; font-size:14.5px; color:var(--navy); font-weight:800}
+.step p{margin:0; font-size:12.5px; color:var(--muted)}
+
+/* ===== Case study ===== */
+.case{background:var(--navy); color:#eaf1f8; border-radius:var(--radius); padding:30px; box-shadow:var(--shadow)}
+.case .tag{display:inline-block; font-size:12px; font-weight:700; color:#ffd86b; border:1px solid rgba(255,216,107,.5); padding:3px 11px; border-radius:999px; margin-bottom:14px}
+.case-row{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:6px}
+.case-row .c{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:16px}
+.case-row .c .h{font-size:12px; font-weight:800; color:#9fc0e0; letter-spacing:.06em; margin-bottom:6px}
+.case-row .c p{margin:0; font-size:14px; color:#f0f5fa}
+
+/* ===== Accordion index ===== */
+.index-intro{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:24px}
+.open-all{background:var(--soft2); border:1px solid var(--line); color:var(--navy); font-weight:800; font-size:13px; padding:9px 18px; border-radius:999px; cursor:pointer; white-space:nowrap}
+.open-all:hover{border-color:var(--blue); color:var(--blue)}
+.acc{border:1px solid var(--line); border-radius:14px; background:#fff; margin-bottom:14px; box-shadow:var(--shadow); transition:border-color .15s}
+.acc:hover{border-color:var(--blue)}
+.acc[open]{border-color:var(--blue)}
+.acc > summary{list-style:none; cursor:pointer; display:flex; align-items:center; gap:16px; padding:20px 24px}
+.acc > summary::-webkit-details-marker{display:none}
+.acc-tag{flex:none; font-size:11.5px; font-weight:800; color:#fff; background:var(--navy); padding:5px 10px; border-radius:999px; min-width:54px; text-align:center; letter-spacing:.02em}
+.acc[open] .acc-tag{background:var(--blue)}
+.acc-main{flex:1; min-width:0}
+.acc-title{display:block; font-size:clamp(17px,2.3vw,20.5px); font-weight:800; color:var(--navy); line-height:1.42}
+.acc-teaser{display:block; font-size:13px; color:var(--muted); margin-top:4px}
+.acc-chev{flex:none; width:22px; height:22px; color:var(--muted); transition:transform .2s}
+.acc[open] .acc-chev{transform:rotate(180deg); color:var(--blue)}
+.acc-body{padding:22px 24px 28px; border-top:1px solid var(--line)}
+.acc-body .lead0{font-size:14.5px; color:#41505f; margin:0 0 18px}
+.acc-cta{text-align:center; margin-top:24px}
+.acc-sub{margin:26px 0 12px; color:var(--navy); font-size:17px; font-weight:800}
+.qa{padding:15px 2px; border-bottom:1px solid var(--line)}
+.qa:last-child{border-bottom:none}
+.qa .qq{font-weight:800; color:var(--navy); margin-bottom:6px}
+.qa .qq b{color:var(--blue); margin-right:6px}
+.qa .aa{color:#41505f; font-size:14.5px}
+
+/* ===== Contact / form ===== */
+.contact{background:linear-gradient(180deg,#0a2540,#12345c); color:#fff}
+.contact .sec-title{color:#fff}
+.contact .lead{color:#cfe0f1; margin-bottom:26px}
+.form-card{background:#fff; border-radius:18px; padding:30px; box-shadow:0 20px 50px -20px rgba(0,0,0,.5); color:var(--ink)}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.field{display:flex; flex-direction:column; gap:6px}
+.field.full{grid-column:1 / -1}
+.field label{font-size:13px; font-weight:700; color:var(--navy)}
+.field label .req{color:var(--accent); font-size:11px; margin-left:4px}
+.field input,.field select,.field textarea{font:inherit; font-size:15px; padding:11px 13px; border:1.5px solid var(--line); border-radius:10px; background:#fff; color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(23,99,166,.12)}
+.form-actions{margin-top:18px; display:flex; flex-direction:column; gap:12px; align-items:center}
+.assure{display:flex; flex-wrap:wrap; gap:8px 18px; justify-content:center; font-size:13px; color:var(--green); font-weight:700; margin-top:4px}
+.assure span{display:inline-flex; align-items:center; gap:6px}
+.alt-contact{margin-top:22px; text-align:center; color:#cfe0f1; font-size:14px}
+.alt-contact a{color:#ffd86b; font-weight:800; text-decoration:none}
+.offer-recap{display:flex; flex-wrap:wrap; gap:10px 16px; justify-content:center; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+  border-radius:12px; padding:14px 18px; margin:0 auto 26px; max-width:760px}
+.offer-recap .o{display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:14px; color:#fff}
+.offer-recap .o b{color:#ffd86b}
+
+/* ===== 要確認メモ（最下部） ===== */
+.checklist-section{background:var(--gold-soft); border-top:2px dashed var(--gold-line); padding:40px 0}
+.checklist-section h2{font-size:18px; color:var(--gold); font-weight:800; margin:0 0 20px}
+.checklist-item{background:#fff; border:1px dashed var(--gold-line); border-radius:10px; padding:16px 18px; margin-bottom:14px; font-size:13.5px; color:#5a4700; line-height:1.7}
+.checklist-item b{color:#4a3a00}
+.checklist-item .tag{display:inline-block; font-size:11px; font-weight:800; background:var(--gold-line); color:#5a3a00; padding:2px 9px; border-radius:999px; margin-bottom:8px}
+
+/* ===== footer ===== */
+footer{background:#06182b; color:#9db4cc; font-size:12.5px; padding:30px 0}
+footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between; align-items:center}
+.fn{font-size:12px; color:var(--muted); margin-top:14px; line-height:1.7}
+.fn b{color:#41505f}
+
+/* ===== responsive ===== */
+@media(max-width:860px){
+  .g2,.g3{grid-template-columns:1fr}
+  .trustbar .wrap{grid-template-columns:repeat(2,1fr); gap:14px 4px}
+  .trustbar .t:nth-child(2){border-right:none}
+  .steps{grid-template-columns:1fr 1fr}
+  .case-row{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  section{padding:48px 0}
+}
+@media(max-width:560px){
+  .topbar .wrap{gap:8px}
+  .brand{font-size:14px; line-height:1.25}
+  .brand small{font-size:9px}
+  .nav-cta{font-size:12px; padding:8px 12px; white-space:nowrap}
+  .hero{padding:28px 0 20px}
+  .hero-img{border-radius:10px}
+  .hero-cta-row{flex-direction:column; align-items:stretch}
+  .hero-cta-row .btn{width:100%}
+  .btn-primary{font-size:15px; padding:14px 16px}
+  .trustbar .t{border-right:none}
+  .steps{grid-template-columns:1fr}
+  .offer-recap{flex-direction:column; align-items:flex-start}
+  .form-card{padding:22px 16px}
+  .acc > summary{padding:16px 16px; gap:12px}
+  .acc-body{padding:18px 16px 22px}
+  .acc-tag{min-width:46px; font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<!-- =================== TOP BAR =================== -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">インクロム株式会社<small>CRO / SMO ・ 被験者調達</small></div>
+    <a class="nav-cta" href="#contact">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H7l-3 3V4z"/></svg>
+      無料で可否を相談
+    </a>
+  </div>
+</header>
+
+<!-- =================== HERO（FV画像そのまま埋込） =================== -->
+<div class="hero">
+  <div class="wrap">
+    <img
+      class="hero-img"
+      src="assets/hero-fv.png"
+      alt="自動車の開発テスト向け テストモニター（被験者）調達サービス｜インクロム株式会社"
+    >
+    <div class="hero-cta-row">
+      <a class="btn btn-primary" href="#contact">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        この条件の人が集まるか、無料で確認する
+      </a>
+      <a class="btn btn-ghost" href="#index">サービス詳細を見る</a>
+    </div>
+    <p class="hero-note">
+      ※「約37万人」は医療情報付きの実動パネル数です。条件別の該当数は最新の登録ベースで算出してご提示します。<br>
+      ※「来場率90%以上」は当社が管理する来場型試験での実績値です（試験の種類・地域・拘束時間により変動し、保証値ではありません）。<br>
+      ※ 売り込みはいたしません。「この条件は集まるか？」だけのご相談・資料請求のみでも歓迎です。
+    </p>
+  </div>
+</div>
+
+<!-- =================== 技術用語の信頼バンド =================== -->
+<div class="tech-band">
+  <div class="wrap">
+    <span class="tb-label">専門の方向け｜こんな評価試験に対応</span>
+    <span class="tb-text">DMS＝ドライバーモニタリング（眠気・脇見・着座 等）の評価 ／ シート・操作画面(HMI)の評価 ／ 運転シミュレーター ／ 視線計測(アイトラッキング)・生体計測(心拍・脳波) ／ Euro NCAP等の新基準に向けた評価試験</span>
+  </div>
+</div>
+
+<!-- =================== TRUST BAR =================== -->
+<div class="trustbar">
+  <div class="wrap">
+    <div class="t"><div class="n">1983<span>年創業</span></div><div class="l">治験支援 43年</div></div>
+    <div class="t"><div class="n">2,300<span>試験+</span></div><div class="l">累計支援実績</div></div>
+    <div class="t"><div class="n">約37<span>万人</span></div><div class="l">医療情報付きパネル</div></div>
+    <div class="t"><div class="n">40<span>施設</span></div><div class="l">提携医療機関</div></div>
+    <div class="t"><div class="n">90<span>%以上</span></div><div class="l">来場率（治験管理）</div></div>
+  </div>
+</div>
+
+<!-- =================== INDEX (目次型アコーディオン) =================== -->
+<section id="index" style="background:var(--soft)">
+  <div class="wrap">
+    <span class="eyebrow">サービス詳細</span>
+    <h2 class="sec-title">気になる見出しから、その場で開いて読めます。</h2>
+    <div class="index-intro">
+      <p style="margin:0; color:var(--muted); font-size:15px; flex:1; min-width:240px">上から順に読む必要はありません。関心のあるテーマをクリックすると、詳細が下に開きます。</p>
+      <button class="open-all" id="openAll" type="button" onclick="toggleAll()">すべて開く</button>
+    </div>
+
+    <!-- 01 課題 -->
+    <details class="acc" open>
+      <summary>
+        <span class="acc-tag">課題</span>
+        <span class="acc-main">
+          <span class="acc-title">一般募集では、"本物の被験者"が揃わない</span>
+          <span class="acc-teaser">新基準対応の評価試験で、現場が抱える「2大リスク」</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p class="lead0">DMS（眠気・脇見検知）やシート・HMI開発の評価試験で、被験者の"質"と"統制"が試験全体のボトルネックになります。</p>
+        <div class="grid g2">
+          <div class="card">
+            <div class="card-ic ic-red"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 16H3L12 3z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+            <h3>リスク① 検証精度の不足による手戻り</h3>
+            <p>OEMが求める厳格なターゲット条件（医学的に確認された疲労状態・特定の体格・高齢層など）を一般モニターから集められず、検証の精度が不足。データの妥当性が問われ、評価のやり直しが発生します。</p>
+          </div>
+          <div class="card">
+            <div class="card-ic ic-red"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+            <h3>リスク② 高額機材の空稼働（タイムチャージ損失）</h3>
+            <p>被験者の遅刻・直前辞退・行動制限（睡眠・飲酒等のプロトコル）の不遵守により、大型ドライビングシミュレータ・アイトラッキング・脳波/心拍計測などの高額設備のスケジュールが崩れ、確保した稼働枠・計測スタッフの待機時間・被験者の拘束枠が無駄になります。</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 02 オファー -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">オファー</span>
+        <span class="acc-main">
+          <span class="acc-title">機材が空いても、募集費はゼロ</span>
+          <span class="acc-teaser">なぜ「来た人の分だけ後払い」にできるのか</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <div class="reverse">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 15-6.7L21 7"/><path d="M21 3v4h-4"/><path d="M21 12a9 9 0 0 1-15 6.7L3 17"/><path d="M3 21v-4h4"/></svg></div>
+          <div>
+            <h3>だから、インクロムは「完全出来高制」です。</h3>
+            <p>費用が発生するのは、<b>目標人数が実際に参加し、プロトコルを完了した分だけ</b>。初期費用は0円。被験者の欠席・途中辞退による<b>募集費は原則発生しません</b>（当社が引き受けるのは"被験者調達のコスト"リスク）。会場費・交通宿泊・直前変更費などは、見積条件で個別に定義します。</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 03 理由① -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">理由①</span>
+        <span class="acc-main">
+          <span class="acc-title">自己申告に頼らない、"条件に合う人"の集め方</span>
+          <span class="acc-teaser">医師の診断・健診データで「本物だけ」を見極める</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p class="summary-line">一般モニターの「自称」だけに頼らず、本人同意のうえ登録された医療情報・健診データ・追加スクリーニングを組み合わせて該当者にご案内。AI・アルゴリズム検証の教師データ／グラウンドトゥルース（正解データ）として使いやすい品質を高めます。</p>
+        <div class="grid g3">
+          <div class="card soft">
+            <div class="card-ic ic-navy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+            <h3>本人同意ベースの登録パネル</h3>
+            <p>本人同意のうえ医療情報を登録いただいた方で構成。研究目的・利用範囲は登録時に説明済みのため、用途に応じた参加案内が可能です。</p>
+          </div>
+          <div class="card soft">
+            <div class="card-ic ic-navy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <h3>確定診断 × 健診データ</h3>
+            <p>提携医療機関の健診データ・医師の確定診断を裏付けに該当者を抽出。「自己申告だけ」のモニターと比べ、条件適合の確度が段違いです。</p>
+          </div>
+          <div class="card soft">
+            <div class="card-ic ic-navy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div>
+            <h3>ラベルノイズの排除</h3>
+            <p>「疲労していると言っている人」ではなく「医学的に確認された状態の人」。教師データの質を左右するラベルの正確さを根本から担保します。</p>
+          </div>
+        </div>
+        <h3 class="acc-sub">保有している主な被験者カテゴリ</h3>
+        <div class="grid g3">
+          <div class="card" style="padding:18px"><b style="color:var(--navy)">腰痛・身体特性</b><p style="margin-top:6px; font-size:13.5px; color:var(--muted)">シート・快適性評価、姿勢計測 など</p></div>
+          <div class="card" style="padding:18px"><b style="color:var(--navy)">不眠・SAS（睡眠時無呼吸）</b><p style="margin-top:6px; font-size:13.5px; color:var(--muted)">眠気・覚醒度検知、疲労検証 など</p></div>
+          <div class="card" style="padding:18px"><b style="color:var(--navy)">特定BMI・体格</b><p style="margin-top:6px; font-size:13.5px; color:var(--muted)">安全設計、拘束・着座評価 など</p></div>
+          <div class="card" style="padding:18px"><b style="color:var(--navy)">高齢ドライバー層</b><p style="margin-top:6px; font-size:13.5px; color:var(--muted)">シニア反応・視認性・操作性評価 など</p></div>
+          <div class="card" style="padding:18px"><b style="color:var(--navy)">健常コントロール群</b><p style="margin-top:6px; font-size:13.5px; color:var(--muted)">標準比較データ・対照群 など</p></div>
+          <div class="card soft" style="padding:18px; display:flex; align-items:center"><p style="margin:0; font-size:13.5px; color:var(--muted)">該当する被験者数は、<b style="color:var(--navy)">ご要件の確定後に最新の登録ベースで即時算出</b>してご提示します。</p></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 04 理由② -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">理由②</span>
+        <span class="acc-main">
+          <span class="acc-title">「来場率90%以上」を支える、治験レベルの当日統制</span>
+          <span class="acc-teaser">集めて終わりにしない、4ステップの行動管理</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p class="summary-line">国の規制（GCP等）に基づく治験支援で培った行動管理ノウハウを、そのまま評価試験に適用。「集めて終わり」ではなく、当日きちんと来て・条件通りに参加してもらうまでを管理します。</p>
+        <div class="steps">
+          <div class="step"><div class="no">1</div><h4>事前スクリーニング</h4><p>確定診断・条件適合と、運転免許・運転頻度などの実験要件を事前確認。</p></div>
+          <div class="step"><div class="no">2</div><h4>計測適性チェック</h4><p>アイトラッキング・脳波等の装着可否（眼鏡・コンタクト等）を事前に確認し、当日NGを防止。</p></div>
+          <div class="step"><div class="no">3</div><h4>前日フォロー</h4><p>睡眠・飲酒など行動制限プロトコルの遵守を専門スタッフが直接リマインド・確認。</p></div>
+          <div class="step"><div class="no">4</div><h4>当日統制 ＆ 補欠体制</h4><p>不遵守者の除外基準を運用し、欠席時は補欠アサインでスケジュールを死守。</p></div>
+        </div>
+        <p style="margin-top:18px; font-size:14px; color:var(--muted)">この一連の統制の<b>結果</b>として、来場型試験で<b style="color:var(--navy)">来場率90%以上</b>を実現しています。</p>
+        <p class="fn">※ 当社が管理する来場型試験における実績値です（対象期間・算定条件はお問い合わせ時にご提示）。来場率は試験の種類・地域・拘束時間により変動し、保証値ではありません。</p>
+      </div>
+    </details>
+
+    <!-- 05 適合 -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">適合</span>
+        <span class="acc-main">
+          <span class="acc-title">あなたの実験条件に、医療データを翻訳します</span>
+          <span class="acc-teaser">ケース別の対応早見表（眠気検知／シート・HMI／ドライビングシミュレータ）</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p class="lead0">代表的なユースケースごとに、医療指標 → 運転実験の要件 → 当日の統制方法を一本の線でつなぎます（例示）。</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>ユースケース</th><th>医療・属性スクリーニング</th><th>運転実験の要件</th><th>当日の統制</th></tr></thead>
+            <tbody>
+              <tr><td><span class="uc">DMS 疲労・脇見検知</span></td><td>SAS／不眠の確定診断、睡眠状態の医学的確認</td><td>普通免許保有・一定以上の運転頻度・計測に耐える視機能</td><td>前夜の睡眠制限プロトコル、覚醒度の事前確認</td></tr>
+              <tr><td><span class="uc">シート・HMI 身体評価</span></td><td>腰痛など身体特性、特定BMI・体格の確認</td><td>対象体格レンジ、姿勢・体圧計測への適合</td><td>計測機器の装着適性、所要時間の事前同意</td></tr>
+              <tr><td><span class="uc">ドライビングシミュレータ</span></td><td>シニア層／健常コントロール群の属性確認</td><td>シミュレータ酔い耐性・必要な運転スキル水準</td><td>補欠アサイン体制、除外基準の運用</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="acc-cta"><a class="btn btn-primary" href="#contact">この条件で抽出できるか、無料で確認する</a></div>
+      </div>
+    </details>
+
+    <!-- 06 機密 -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">機密</span>
+        <span class="acc-main">
+          <span class="acc-title">顔・視線・脳波データを、どう守るか</span>
+          <span class="acc-teaser">NDA・データ帰属・廃棄・GCP監査証跡 ― 治験CROだから強い</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p class="summary-line">DMS・脇見検知の被験者には、顔・視線・瞳孔の映像や心拍・脳波などの生体データが伴います。これは開発中アルゴリズムの性能に直結する最高機密。GCP（治験の品質基準）で培った同意管理・記録管理・監査証跡の考え方を応用し、その取り扱いを設計から引き受けます。</p>
+        <div class="grid g3">
+          <div class="card"><div class="card-ic ic-navy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>NDA標準締結</h3><p>受託時にNDAを締結。被験者にも守秘義務を課し、開発情報の漏えいを防ぎます。</p></div>
+          <div class="card"><div class="card-ic ic-navy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><h3>データの帰属・取り扱いを契約で明確化</h3><p>取得した映像・生体データの帰属・保管・返却・廃棄の条件は、契約で個別に定義。<b>当社が成果データを二次利用しない設計</b>が可能です。</p></div>
+          <div class="card"><div class="card-ic ic-navy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 4.4-3.4 7.4-8 10-4.6-2.6-8-5.6-8-10V6l8-4z"/></svg></div><h3>同意取得は当社が管理</h3><p>被験者からの肖像・生体情報の利用同意（ICF）は当社が取得・管理。要配慮個人情報の取り扱い方針に沿って運用します。</p></div>
+          <div class="card"><div class="card-ic ic-navy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M4.5 9h15M4.5 15h15M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div><h3>再委託・海外移転は承認制</h3><p>被験者調達・データ取り扱いの再委託や海外移転は<b>原則行わず</b>、必要な場合は事前開示・ご承認のうえで対応します。</p></div>
+          <div class="card"><div class="card-ic ic-navy"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M8 13h8M8 17h6"/></svg></div><h3>監査証跡（GCP由来）</h3><p>原資料管理・監査証跡をそのまま適用。「誰が・いつ・どのデータを」を追跡可能な状態で運用します。</p></div>
+          <div class="card soft" style="display:flex;align-items:center"><p style="margin:0;font-size:14px;color:var(--muted)">機密・データ取り扱いの具体条件は、貴社の社内規定に合わせて<b style="color:var(--navy)">個別にすり合わせ</b>のうえ書面化します。</p></div>
+        </div>
+        <div class="acc-cta"><a class="btn btn-ghost" href="#contact">NDA前提で相談する</a></div>
+      </div>
+    </details>
+
+    <!-- 07 ワンストップ -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">一括</span>
+        <span class="acc-main">
+          <span class="acc-title">被験者"調達"で終わらない。実験の"実行"まで。</span>
+          <span class="acc-teaser">IRB・倫理審査・実験計画書・医療スタッフ派遣をワンストップ</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p class="lead0">単なる被験者紹介で終わらず、生体・映像データを扱う実験を医学的・倫理的に成立させるところまで巻き取ります。これは人材派遣やモニター会社にはできない、治験CROならではの領域です。</p>
+        <div class="grid g3">
+          <div class="card"><div class="card-ic ic-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2h6v3H9zM7 5h10a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>実験計画書レビュー</h3><p>計画段階から関与し、被験者条件・統制方法の妥当性を確認します。</p></div>
+          <div class="card"><div class="card-ic ic-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 4.5-3.2 7.5-8 9-4.8-1.5-8-4.5-8-9V7l8-4z"/><path d="M9.5 12l1.8 1.8 3.5-3.8"/></svg></div><h3>倫理審査（IRB）申請支援</h3><p>提携医療機関を通じ、倫理審査の申請に必要な書類作成・手続きをサポートします。</p></div>
+          <div class="card"><div class="card-ic ic-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 3.1a4 4 0 0 1 0 7.8M21 20a6 6 0 0 0-4-5.7"/></svg></div><h3>医療専門スタッフ派遣</h3><p>必要に応じて医療専門スタッフを現場へ派遣し、安全・適正な実施を支えます。</p></div>
+        </div>
+        <p class="fn" style="margin-top:14px"><b>※</b> 倫理審査の可否は、独立した倫理委員会が判断します（当社は申請手続きを支援する立場です）。</p>
+      </div>
+    </details>
+
+    <!-- 08 実績 -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">実績</span>
+        <span class="acc-main">
+          <span class="acc-title">「集めた数」でなく、「解決したこと」で語る</span>
+          <span class="acc-teaser">想定支援例＋創業1983年・累計2,300試験・Veeva認定の実体</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <div class="case">
+          <span class="tag">想定支援例（自動車関連の評価試験）</span>
+          <div class="case-row">
+            <div class="c"><div class="h">課題 / BEFORE</div><p>一般募集では条件に合う被験者が揃わず、評価が予定通り進まない。シミュレータの稼働枠が無駄になりかけていた。</p></div>
+            <div class="c"><div class="h">対応 / ACTION</div><p>医師の確定診断ベースで該当被験者をアサイン。前日フォローと補欠体制で当日の歩留まりを統制。</p></div>
+            <div class="c"><div class="h">結果 / AFTER</div><p>必要人数を予定スケジュール内で動員し、来場率90%以上で評価を完了。機材の空き枠を最小化。</p></div>
+          </div>
+        </div>
+        <h3 class="acc-sub">数字に頼らず、会社の実体で裏づけます</h3>
+        <div class="grid g3">
+          <div class="card soft"><b style="color:var(--navy);font-size:20px">1983年創業</b><p style="margin-top:4px">治験支援43年。長期にわたり国の規制下で試験を支えてきた実体。</p></div>
+          <div class="card soft"><b style="color:var(--navy);font-size:20px">累計 2,300試験以上</b><p style="margin-top:4px">多様な条件・規模の被験者調達と運用を重ねた実績。</p></div>
+          <div class="card soft"><b style="color:var(--navy);font-size:20px">提携医療機関 40施設</b><p style="margin-top:4px">大阪・東京を中心に、確定診断ベースの母集団を支える基盤。</p></div>
+          <div class="card soft"><b style="color:var(--navy);font-size:20px">自社治験施設 3拠点</b><p style="margin-top:4px">来場型試験の運営ノウハウを内製。</p></div>
+          <div class="card soft"><b style="color:var(--navy);font-size:20px">累計被験者 64,000人+</b><p style="margin-top:4px">実際に試験に参加いただいた延べ人数。</p></div>
+          <div class="card soft"><b style="color:var(--navy);font-size:20px">Veeva CRO Partner</b><p style="margin-top:4px">2026年5月認定。データ基盤・品質体制の第三者評価。</p></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 09 条件 -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">条件</span>
+        <span class="acc-main">
+          <span class="acc-title">稟議に必要な情報を、先に出します</span>
+          <span class="acc-teaser">リードタイム・対応エリア・規模・料金体系</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p class="lead0">「価格を聞くためだけに営業に捕まる」のは避けたいはず。判断に必要な要点を、ここで開示します。</p>
+        <div class="table-scroll">
+          <table class="spec-table">
+            <tbody>
+              <tr><th>標準リードタイム</th><td>要件確定後、<b>約2〜4週間</b>でアサイン開始（目安・条件により変動）</td></tr>
+              <tr><th>対応エリア</th><td>全国相談可。実動範囲・遠方試験場（テストコース等）への交通・宿泊手配は条件により個別設計</td></tr>
+              <tr><th>対応規模</th><td>単一案件・月あたりの動員上限は条件により異なります。条件により大規模募集にも対応（上限はご相談時に提示）</td></tr>
+              <tr><th>料金体系</th><td><b>完全出来高制（成功報酬）</b>。初期費用0円。単価は被験者条件により変動するため、お見積りにてご提示</td></tr>
+              <tr><th>「出来高」の定義</th><td>費用が発生するのは、目標人数が<b>実際に参加し、プロトコルを完了した分のみ</b>。途中辞退者は課金対象外です。</td></tr>
+              <tr><th>事前相談・調査</th><td>ご相談・概算調査・条件適合性の確認は<b>無料</b>です（詳細条件はお見積り時にご案内）。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- 10 FAQ -->
+    <details class="acc">
+      <summary>
+        <span class="acc-tag">Q&amp;A</span>
+        <span class="acc-main">
+          <span class="acc-title">よくあるご質問</span>
+          <span class="acc-teaser">個人情報・地方来場・課金定義・リードタイム・他社との違い など</span>
+        </span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <div class="qa"><div class="qq"><b>Q.</b>医療情報を自動車R&amp;Dの試験に使って、個人情報・同意は大丈夫ですか？</div><div class="aa">パネルは本人同意のうえ医療情報を登録いただいた方で構成しています。治験で培った同意管理（GCPの考え方を応用）に基づき、研究目的・利用範囲に応じた案内・必要に応じた再同意のフローを設計します。要配慮個人情報の取り扱い方針は事前にご説明します。</div></div>
+        <div class="qa"><div class="qq"><b>Q.</b>うちの実験場は地方にあります。被験者は来場できますか？</div><div class="aa">全国でご相談を承ります。被験者の実動範囲や、遠方試験場への交通・宿泊手配は条件に応じて個別に設計します。まずは試験場所と希望条件をお知らせください。</div></div>
+        <div class="qa"><div class="qq"><b>Q.</b>完全出来高制とのことですが、「完了」の線引きと辞退者の扱いは？</div><div class="aa">費用が発生するのは「実際に参加し、プロトコルを完了した被験者」の分のみです。途中辞退者は課金対象外。初期費用・事前相談・概算調査は無料です。詳細条件はお見積り時にご案内します。</div></div>
+        <div class="qa"><div class="qq"><b>Q.</b>最短どれくらいで募集を開始できますか？</div><div class="aa">要件が固まれば、目安として約2〜4週間でアサインを開始します（条件・規模により変動）。スケジュールが先に決まっている場合は、それに合わせた逆算でご提案します。</div></div>
+        <div class="qa"><div class="qq"><b>Q.</b>顔・視線の映像や生体データの機密は守られますか？</div><div class="aa">NDAを締結のうえ、取得データの帰属・保管・廃棄の条件は契約で個別に定義します。当社が成果データを二次利用しない設計が可能で、再委託・海外移転は原則行わず必要時のみ承認制とします。GCP由来の監査証跡で取り扱いを追跡可能にします。</div></div>
+        <div class="qa"><div class="qq"><b>Q.</b>逆に「集まらない条件」はありますか？</div><div class="aa">あります。極端に希少な条件や、相反する条件の重ね合わせは難易度が上がります。だからこそ、まず無料の事前調査で「この条件はどの程度集まるか」を正直にお伝えします。できないことはできないと申し上げます。</div></div>
+        <div class="qa"><div class="qq"><b>Q.</b>一般のモニター会社・人材派遣と何が違いますか？</div><div class="aa">医師の確定診断・健診データに基づく条件適合性、治験で培った同意管理と来場統制、そして必要に応じた医療専門スタッフの派遣・倫理審査（IRB）申請支援まで対応できる点が違いです。被験者を「集める」だけでなく、医学的に妥当な実験の「実行」までを支えます。</div></div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- =================== CONTACT（常時表示） =================== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); color:#cfe0f1">お問い合わせ</span>
+    <h2 class="sec-title">まずは「この条件、集まりますか？」だけで大丈夫です。</h2>
+    <p class="lead">具体的な計画が固まっていない段階でも、資料請求のみでも歓迎です。売り込みはいたしません。</p>
+
+    <div class="offer-recap">
+      <span class="o"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#ffd86b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 12.5l1.8 1.8 3.5-3.8"/></svg> <b>初期費用0円</b></span>
+      <span class="o"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#ffd86b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 12.5l1.8 1.8 3.5-3.8"/></svg> 完全<b>出来高制</b></span>
+      <span class="o"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#ffd86b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 12.5l1.8 1.8 3.5-3.8"/></svg> 相談・概算調査は<b>無料</b></span>
+    </div>
+
+    <div class="form-card">
+      <form id="leadForm" onsubmit="submitLead();return false;">
+        <div class="form-grid">
+          <div class="field"><label for="f_company">会社名<span class="req">必須</span></label><input id="f_company" name="company" type="text" required autocomplete="organization" placeholder="例）株式会社○○ 先行開発部"></div>
+          <div class="field"><label for="f_name">ご担当者名<span class="req">必須</span></label><input id="f_name" name="name" type="text" required autocomplete="name" placeholder="例）山田 太郎"></div>
+          <div class="field"><label for="f_email">メールアドレス<span class="req">必須</span></label><input id="f_email" name="email" type="email" required autocomplete="email" placeholder="例）taro.yamada@example.co.jp"></div>
+          <div class="field"><label for="f_target">検証したい被験者条件</label>
+            <select id="f_target" name="target">
+              <option value="">選択してください</option>
+              <option>疲労・脇見検知（眠気・SAS など）</option>
+              <option>シニア（高齢ドライバー層）</option>
+              <option>特定BMI・体格</option>
+              <option>腰痛・身体特性</option>
+              <option>健常コントロール群</option>
+              <option>その他 / 未定</option>
+            </select>
+          </div>
+          <div class="field"><label for="f_count">想定人数（任意）</label><input id="f_count" name="count" type="text" placeholder="例）30名程度 / 未定"></div>
+          <div class="field"><label for="f_when">希望時期（任意）</label><input id="f_when" name="when" type="text" placeholder="例）2026年9月頃 / 未定"></div>
+          <div class="field full"><label for="f_msg">ご相談内容（任意）</label><textarea id="f_msg" name="message" rows="3" placeholder="例）DMS疲労検知の評価で、SAS確定診断ありの被験者を◯◯拠点に集めたい。集まるか相談したい。"></textarea></div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            被験者調達の可否を無料で確認する
+          </button>
+          <div class="assure">
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 通常1〜2営業日以内に担当よりご返信</span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 相談だけ・資料請求のみOK</span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> ご要件確認と可否回答を最優先</span>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="alt-contact">
+      フォームが使いづらい場合は、メールでも承ります　<a href="mailto:info@incrom.com?subject=【自動車R%26D】被験者調達のご相談">info@incrom.com</a>（インクロム株式会社 被験者募集部）
+    </div>
+  </div>
+</section>
+
+<!-- =================== 要確認メモ（角田さん／Ray 確認用） =================== -->
+<div class="checklist-section">
+  <div class="wrap">
+    <h2>要確認メモ（角田さん・Ray 用）</h2>
+
+    <div class="checklist-item">
+      <div class="tag">FV・法務</div><br>
+      <b>FVでの疾患名の扱い：</b>FVでは、要配慮個人情報（病歴）の告知範囲に配慮し、疾患名（SAS・腰痛 等）の具体列挙をあえて伏せて「特定の健康状態・身体特性」と抽象化しています（疾患名は本人同意の利用範囲を前提に、下のアコーディオン内に限定）。FVで疾患名を出してよいか、法務・同意範囲をご確認ください。
+    </div>
+
+    <div class="checklist-item">
+      <div class="tag">tech-band</div><br>
+      <b>Euro NCAP記載の確認：</b>tech-bandの「Euro NCAP等の新基準に向けた評価試験」は、適合保証ではなく"その評価試験向けの被験者調達・実験支援ができる"意味で記載しています。Euro NCAP関連の支援実績があれば、粒度（社名は伏せて可）を添えると専門家への説得力が増します。実績が無ければこの一文の削除も検討してください。
+    </div>
+
+    <div class="checklist-item">
+      <div class="tag">理由① 被験者カテゴリ</div><br>
+      <b>疾患別の人数：</b>原案にあった疾患別の精密人数（腰痛症1,689／不眠・SAS 3,581／BMI25以上 約6万／高齢 約6.4万／健康 15,941）は、社内検証資料に出所が見当たらないため暫定的に伏せています。実パネルからの実抽出値であれば、集計日と抽出条件を添えてカード内に「該当目安：約○○名（2026年○月時点・条件により変動）」として復活できます。掲載可否をご判断ください。
+    </div>
+
+    <div class="checklist-item">
+      <div class="tag">理由② 来場率</div><br>
+      <b>「93.7%」の算定根拠：</b>原案の「来場完了率93.7%」は社内の確立メッセージ（90%以上）と一致せず出所も確認できないため、安全側で「90%以上」に統一しました。もし「93.7%」の算定根拠（対象試験・母数・期間）があれば、脚注付きで具体値に戻せます。
+    </div>
+
+    <div class="checklist-item">
+      <div class="tag">適合 早見表</div><br>
+      <b>スクリーニング軸の実値確認：</b>早見表のスクリーニング軸・要件（AHI値レンジ、走行距離、矯正視力の閾値など）は業界一般の想定での例示です。インクロムが実際に運用している基準・対応可能範囲に合わせて確定させてください。具体的な閾値を1ケースでも実値で示せると、技術者の「適合の確信」が一気に上がります。
+    </div>
+
+    <div class="checklist-item">
+      <div class="tag">一括 提携医療機関</div><br>
+      <b>「平心会」の掲載許諾：</b>原案では提携先の固有名「平心会」を明記していました。コールド営業のLPに固有名を出す場合は当該医療機関の掲載許諾が必要なため、暫定で「提携医療機関」表記にしています。許諾済みであれば固有名を復活できます。
+    </div>
+
+    <div class="checklist-item">
+      <div class="tag">実績 ケース</div><br>
+      <b>想定支援例の実数：</b>実績ケースは原案の「VR/ドライブシミュレータ試験 28名動員」を骨組みとして構造化したものです。実在案件であれば、実施時期・実人数・難条件・歩留まりの実数（社名は伏せたまま「国内Tier1」「大学発研究室」等の粒度で可）を入れると proof が一気に強くなります。実数が出せない場合はケースを定性表現に後退させます。
+    </div>
+
+    <div class="checklist-item">
+      <div class="tag">条件 スペック表</div><br>
+      <b>各項目の実値差し替え：</b>①「約2〜4週間」のリードタイムを実績ベースの数値に差し替えてください（稟議の概算に直結する最重要項目）。②実際に動員できる地理範囲・遠方手配の可否を確定してください。③「単一案件で最大○名」「月あたり○名まで」の目安を入れると規模不安を潰せます。④疾患カテゴリ別の単価レンジ（幅でOK）・最低発注規模の有無を出せるなら稟議化が一段楽になります。
+    </div>
+
+    <div class="checklist-item">
+      <div class="tag">フォーム 実装</div><br>
+      <b>フォームの本番接続：</b>現在のフォームは送信時に入力内容を本文に自動入力した状態でメーラーを開く方式（バックエンド不要・すぐ運用可）です。本番では Google フォーム or 自社CRM の受信エンドポイントに接続すると、流入計測・自動返信・台帳化ができます。返信先メールアドレス（info@incrom.com）と「通常1〜2営業日返信」の運用可否をご確認ください。
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>インクロム株式会社　被験者募集部　｜　CRO / SMO ・ 被験者調達サービス</div>
+    <div>© INCROM Inc.</div>
+  </div>
+</footer>
+
+<script>
+function toggleAll(){
+  var accs = document.querySelectorAll('details.acc');
+  var anyClosed = Array.prototype.some.call(accs, function(d){ return !d.open; });
+  Array.prototype.forEach.call(accs, function(d){ d.open = anyClosed; });
+  document.getElementById('openAll').textContent = anyClosed ? 'すべて閉じる' : 'すべて開く';
+}
+function submitLead(){
+  var v = function(id){ return (document.getElementById(id).value || '').trim(); };
+  var company = v('f_company'), name = v('f_name'), email = v('f_email');
+  if(!company || !name || !email){
+    alert('会社名・ご担当者名・メールアドレスのご入力をお願いします。');
+    return;
+  }
+  var lines = [
+    '※本メールは自動生成された雛形です。このまま送信してください。',
+    '',
+    '会社名：' + company,
+    'ご担当者名：' + name,
+    'メールアドレス：' + email,
+    '検証したい被験者条件：' + (v('f_target') || '未選択'),
+    '想定人数：' + (v('f_count') || '未定'),
+    '希望時期：' + (v('f_when') || '未定'),
+    '',
+    'ご相談内容：',
+    (v('f_msg') || '（未記入）')
+  ];
+  var subject = '【自動車R&D】被験者調達のご相談（' + company + '）';
+  var href = 'mailto:info@incrom.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+  window.location.href = href;
+}
+</script>
+</body>
+</html>
