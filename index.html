@@ -73,13 +73,14 @@ svg{stroke-linecap:round; stroke-linejoin:round}
 .btn-ghost:hover{border-color:var(--blue); color:var(--blue)}
 .hero-note{font-size:14px; color:var(--muted); margin-top:2px; padding-bottom:28px}
 
-/* ===== Tech band（専門向け対応領域：強調表示） ===== */
-.tech-band{background:linear-gradient(180deg,#eaf6f3,#def0eb); border-bottom:1px solid var(--teal-line)}
-.tech-band .wrap{padding:24px 22px 26px}
-.tech-band .tb-label{display:inline-flex; align-items:center; gap:8px; font-weight:800; color:#fff; background:var(--teal); padding:8px 18px; border-radius:999px; font-size:15px; letter-spacing:.02em; box-shadow:0 6px 16px -6px rgba(10,123,110,.45)}
-.tech-band .tb-items{display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:14px}
-.tech-band .tb-chip{display:inline-flex; align-items:center; gap:8px; background:#fff; border:1.5px solid var(--teal-line); color:var(--navy); font-size:15px; font-weight:700; padding:9px 16px; border-radius:999px; line-height:1.5; box-shadow:0 3px 10px -4px rgba(10,37,64,.12)}
-.tech-band .tb-chip .icon{color:var(--teal); flex:none}
+/* ===== Tech band（専門向け対応領域：タイポグラフィ主体） ===== */
+.tech-band{background:var(--soft2); border-bottom:1px solid var(--line)}
+.tech-band .wrap{padding:20px 22px 22px}
+.tech-band .tb-label{display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:800; color:var(--blue); letter-spacing:.05em; margin-bottom:7px}
+.tech-band .tb-label .icon{flex:none}
+.tech-band .tb-list{margin:0; font-size:16px; line-height:2; color:#33414f; overflow-wrap:anywhere}
+.tech-band .tb-list b{color:var(--navy); font-weight:800}
+.tech-band .tb-sep{color:#9db4cc; margin:0 7px; font-weight:400}
 
 /* ===== Trust stat bar ===== */
 .trustbar{background:var(--navy); color:#fff}
@@ -214,9 +215,8 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-b
   .hero-cta-row{flex-direction:column; align-items:stretch}
   .hero-cta-row .btn{width:100%}
   .btn-primary{font-size:16px; padding:14px 16px}
-  .tech-band .wrap{padding:18px 16px 20px}
-  .tech-band .tb-label{font-size:13.5px; padding:7px 14px}
-  .tech-band .tb-chip{font-size:13.5px; padding:8px 13px}
+  .tech-band .wrap{padding:16px 16px 18px}
+  .tech-band .tb-list{font-size:14.5px; line-height:1.9}
   .trustbar .t{border-right:none}
   .steps{grid-template-columns:1fr}
   .offer-recap{flex-direction:column; align-items:flex-start}
@@ -274,12 +274,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-b
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 12.5l1.8 1.8 3.5-3.8"/></svg>
       専門の方向け｜こんな評価試験に対応
     </span>
-    <div class="tb-items">
-      <span class="tb-chip">DMS＝ドライバーモニタリング（眠気・脇見・着座 等）の評価</span>
-      <span class="tb-chip">シート・操作画面(HMI)の評価</span>
-      <span class="tb-chip">運転シミュレーター</span>
-      <span class="tb-chip">視線計測(アイトラッキング)・生体計測(心拍・脳波)</span>
-    </div>
+    <p class="tb-list"><b>DMS＝ドライバーモニタリング</b>（眠気・脇見・着座 等）の評価<span class="tb-sep">／</span><b>シート・操作画面(HMI)</b>の評価<span class="tb-sep">／</span><b>運転シミュレーター</b><span class="tb-sep">／</span><b>視線計測(アイトラッキング)・生体計測(心拍・脳波)</b></p>
   </div>
 </div>
 
