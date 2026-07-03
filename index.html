@@ -73,14 +73,14 @@ svg{stroke-linecap:round; stroke-linejoin:round}
 .btn-ghost:hover{border-color:var(--blue); color:var(--blue)}
 .hero-note{font-size:14px; color:var(--muted); margin-top:2px; padding-bottom:28px}
 
-/* ===== 対応評価試験（トラストバー上段・強調表示） ===== */
-.trustbar .tb-scope{border-bottom:1px solid rgba(255,255,255,.16)}
-.trustbar .tb-scope .wrap{display:block; padding:20px 22px 18px}
-.tb-scope .tb-label{display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:800; color:#ffd86b; letter-spacing:.06em; margin-bottom:8px}
-.tb-scope .tb-label .icon{flex:none}
-.tb-scope .tb-list{margin:0; font-size:17px; line-height:2; color:#cfe0f1; overflow-wrap:anywhere}
-.tb-scope .tb-list b{color:#fff; font-weight:800}
-.tb-scope .tb-sep{color:rgba(255,255,255,.35); margin:0 8px; font-weight:400}
+/* ===== 対応評価試験（緑枠ボックス：FV「選ばれる3つの理由」準拠 #008830） ===== */
+.scope-box{background:#fff; border:2px solid #008830; border-radius:16px; padding:18px 22px 15px; margin:26px 0 4px;
+  box-shadow:0 12px 30px -14px rgba(0,136,48,.35)}
+.scope-box .tb-label{display:inline-flex; align-items:center; gap:8px; background:#008830; color:#fff; font-size:14.5px; font-weight:800; padding:7px 16px; border-radius:999px; letter-spacing:.04em; margin-bottom:10px}
+.scope-box .tb-label .icon{flex:none}
+.scope-box .tb-list{margin:0; font-size:16.5px; line-height:2; color:#33414f; overflow-wrap:anywhere}
+.scope-box .tb-list b{color:var(--navy); font-weight:800}
+.scope-box .tb-sep{color:#a9c6b8; margin:0 8px; font-weight:400}
 
 /* ===== Trust stat bar ===== */
 .trustbar{background:var(--navy); color:#fff}
@@ -215,8 +215,8 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-b
   .hero-cta-row{flex-direction:column; align-items:stretch}
   .hero-cta-row .btn{width:100%}
   .btn-primary{font-size:16px; padding:14px 16px}
-  .trustbar .tb-scope .wrap{padding:16px 16px 14px}
-  .tb-scope .tb-list{font-size:15px; line-height:1.9}
+  .scope-box{padding:14px 16px 12px; border-radius:12px}
+  .scope-box .tb-list{font-size:15px; line-height:1.9}
   .trustbar .t{border-right:none}
   .steps{grid-template-columns:1fr}
   .offer-recap{flex-direction:column; align-items:flex-start}
@@ -259,6 +259,15 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-b
       <a class="btn btn-ghost" href="#index">サービス詳細を見る</a>
     </div>
 
+    <!-- 対応評価試験（緑枠ボックス） -->
+    <div class="scope-box">
+      <span class="tb-label">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 12.5l1.8 1.8 3.5-3.8"/></svg>
+        専門の方向け｜こんな評価試験に対応
+      </span>
+      <p class="tb-list"><b>DMS＝ドライバーモニタリング</b>（眠気・脇見・着座 等）の評価<span class="tb-sep">／</span><b>シート・操作画面(HMI)</b>の評価<span class="tb-sep">／</span><b>運転シミュレーター</b><span class="tb-sep">／</span><b>視線計測(アイトラッキング)・生体計測(心拍・脳波)</b></p>
+    </div>
+
     <p class="hero-note">
       ※「約37万人」は医療情報付きの実動パネル数です。条件別の該当数は最新の登録ベースで算出してご提示します。<br>
       ※「来場率90%以上」は当社が管理する来場型試験での実績値です（対象期間・算定条件はご相談時に提示／試験の種類・地域・拘束時間により変動し、保証値ではありません）。<br>
@@ -269,15 +278,6 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-b
 
 <!-- =================== TRUST BAR =================== -->
 <div class="trustbar">
-  <div class="tb-scope">
-    <div class="wrap">
-      <span class="tb-label">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 12.5l1.8 1.8 3.5-3.8"/></svg>
-        専門の方向け｜こんな評価試験に対応
-      </span>
-      <p class="tb-list"><b>DMS＝ドライバーモニタリング</b>（眠気・脇見・着座 等）の評価<span class="tb-sep">／</span><b>シート・操作画面(HMI)</b>の評価<span class="tb-sep">／</span><b>運転シミュレーター</b><span class="tb-sep">／</span><b>視線計測(アイトラッキング)・生体計測(心拍・脳波)</b></p>
-    </div>
-  </div>
   <div class="wrap">
     <div class="t"><div class="n">1983<span>年創業</span></div><div class="l">治験支援 43年</div></div>
     <div class="t"><div class="n">2,300<span>試験+</span></div><div class="l">累計支援実績</div></div>
