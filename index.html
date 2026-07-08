@@ -582,43 +582,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="o"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#ffd86b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 12.5l1.8 1.8 3.5-3.8"/></svg> 相談・概算調査は<b>無料</b></span>
     </div>
 
-    <div class="form-card">
-      <form id="leadForm" onsubmit="submitLead();return false;">
-        <div class="form-grid">
-          <div class="field"><label for="f_company">会社名<span class="req">必須</span></label><input id="f_company" name="company" type="text" required autocomplete="organization" placeholder="例）株式会社○○ 先行開発部"></div>
-          <div class="field"><label for="f_name">ご担当者名<span class="req">必須</span></label><input id="f_name" name="name" type="text" required autocomplete="name" placeholder="例）山田 太郎"></div>
-          <div class="field"><label for="f_email">メールアドレス<span class="req">必須</span></label><input id="f_email" name="email" type="email" required autocomplete="email" placeholder="例）taro.yamada@example.co.jp"></div>
-          <div class="field"><label for="f_target">検証したい被験者条件</label>
-            <select id="f_target" name="target">
-              <option value="">選択してください</option>
-              <option>疲労・脇見検知（眠気・SAS など）</option>
-              <option>シニア（高齢ドライバー層）</option>
-              <option>特定BMI・体格</option>
-              <option>腰痛・身体特性</option>
-              <option>健常コントロール群</option>
-              <option>その他 / 未定</option>
-            </select>
-          </div>
-          <div class="field"><label for="f_count">想定人数（任意）</label><input id="f_count" name="count" type="text" placeholder="例）30名程度 / 未定"></div>
-          <div class="field"><label for="f_when">希望時期（任意）</label><input id="f_when" name="when" type="text" placeholder="例）2026年9月頃 / 未定"></div>
-          <div class="field full"><label for="f_msg">ご相談内容（任意）</label><textarea id="f_msg" name="message" rows="3" placeholder="例）DMS疲労検知の評価で、SAS確定診断ありの被験者を◯◯拠点に集めたい。集まるか相談したい。"></textarea></div>
-        </div>
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            被験者紹介の可否を無料で確認する
-          </button>
-          <div class="assure">
-            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 通常1〜2営業日以内に担当よりご返信</span>
-            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 相談だけ・資料請求のみOK</span>
-            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> ご要件確認と可否回答を最優先</span>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <div class="alt-contact">
-      フォームが使いづらい場合は、メールでも承ります　<a href="mailto:info@incrom.com?subject=【自動車R%26D】被験者紹介のご相談">info@incrom.com</a>（インクロム株式会社 被験者募集部）
+    <!-- プレビュー用：本番（納品版）では href をお問い合わせフォームのURLに差し替えます -->
+    <div class="acc-cta">
+      <a class="btn btn-primary" href="#contact">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16v12H7l-3 3V4z"/></svg>
+        お問い合わせはこちら
+      </a>
     </div>
   </div>
 </section>
@@ -643,30 +612,6 @@ function toggleAll(){
   var anyClosed = Array.prototype.some.call(accs, function(d){ return !d.open; });
   Array.prototype.forEach.call(accs, function(d){ d.open = anyClosed; });
   document.getElementById('openAll').textContent = anyClosed ? 'すべて閉じる' : 'すべて開く';
-}
-function submitLead(){
-  var v = function(id){ return (document.getElementById(id).value || '').trim(); };
-  var company = v('f_company'), name = v('f_name'), email = v('f_email');
-  if(!company || !name || !email){
-    alert('会社名・ご担当者名・メールアドレスのご入力をお願いします。');
-    return;
-  }
-  var lines = [
-    '※本メールは自動生成された雛形です。このまま送信してください。',
-    '',
-    '会社名：' + company,
-    'ご担当者名：' + name,
-    'メールアドレス：' + email,
-    '検証したい被験者条件：' + (v('f_target') || '未選択'),
-    '想定人数：' + (v('f_count') || '未定'),
-    '希望時期：' + (v('f_when') || '未定'),
-    '',
-    'ご相談内容：',
-    (v('f_msg') || '（未記入）')
-  ];
-  var subject = '【自動車R&D】被験者紹介のご相談（' + company + '）';
-  var href = 'mailto:info@incrom.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-  window.location.href = href;
 }
 </script>
 </body>
